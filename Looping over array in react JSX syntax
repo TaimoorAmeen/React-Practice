@@ -1,0 +1,80 @@
+import { useState } from "react";
+import Skills from "./Skills";
+const App = () =>{
+    const userData = [
+        {
+            name:"Taimoor Ameen",
+            age:'23',
+            email:"tamoor@gmail.com",
+            id:1
+        },
+        {
+            name:"sam",
+            age:'34',
+            email:'sam@test',
+            id:2
+        },
+        {
+            name:"peter",
+            age:'20',
+            email:"peter@test",
+            id:3
+        },
+        {
+            name:"bruce",
+            age:'50',
+            email:"bruce@test",
+            id:4
+        }
+    ]
+    return( 
+    <div>  
+        <h1>Loop in JSX with Map Function</h1>
+        <table border={"1"}>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    userData.map((user) => (
+                    <tr key={user.id}>
+                        <td>{user.id}</td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.age}</td>
+                    </tr>                        
+                    ))
+                }
+            </tbody>
+        </table>
+        
+        
+        
+        <h1>Dummy Data</h1>
+        <table border={"1"}>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Age</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Taimoor</td>
+                    <td>tamoor@test.com</td>
+                    <td>14</td>
+                </tr>                
+            </tbody>
+        </table>
+    </div>
+    );  
+}
+export default App;
