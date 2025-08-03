@@ -1,0 +1,35 @@
+import { useState } from "react";
+import Clock from "./Clock";
+import Dropdown from "./Dropdown";
+const Clock = ({color}) => {
+  const[time,setTime] = useState(0);
+  useEffect(()=>{
+    const timer = setInterval(() => {
+        setTime(new Date().toLocaleTimeString());
+    }, 1000);
+    return () => clearInterval(timer);
+  },[]);
+  return (
+    <div>
+        <h1 style={{color:color, backgroundColor:"black", width:"180px", padding:"20px", borderRadius:"5px"}}
+        >{time}</h1>
+    </div>
+  )
+}
+const App = () =>{
+    const[color,setColor] = useState("green");
+    return( 
+    <div>  
+        <h1>Digital Clock in React Js</h1>
+            {/* <Dropdown/> */}
+        <select name="dropdown" id="drop" onChange={(event)=>setColor(event.target.value)}>
+            <option value={"red"}>Red</option>
+            <option value={"blue"}>Blue</option>
+            <option value={"green"}>Green</option>
+            <option value={"orange"}>Orange</option>
+        </select>
+        <Clock color={color}/>
+    </div>
+    );  
+}
+export default App;
