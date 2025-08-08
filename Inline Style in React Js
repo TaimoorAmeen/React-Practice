@@ -1,0 +1,100 @@
+import {useState } from "react";
+const App = () =>{
+    const [cardStyle,setCardStyle] = useState(
+    {
+        border: "1px solid #cccccc3b",
+        width: "400px",
+        boxShadow: "1px 2px 3px 0 #cccccc57",
+        margin: "10px"
+    });
+    const [textColor,setTextColor] = useState("black");
+    const [grid,setGrid] = useState(true);
+    const updateTheme = (bgColor,textColor) => {
+        setCardStyle({...cardStyle,backgroundColor: bgColor});
+        setTextColor(textColor);
+    }
+
+    return( 
+    <div>
+        <h1 style={{color:"red"}}>Dynamic and Conditional Inline Style</h1>
+        <button onClick={()=> updateTheme('#ccc','red')}>Gray Theme</button>
+        <button onClick={()=> updateTheme('white','black')}>Default Theme</button>
+        <button onClick={()=> setGrid(!grid)}>Toggle Grid</button>
+        <div style={{display: grid?'flex':'block', flexWrap:'wrap'}}>
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+
+            <div style={cardStyle}>
+                <img style={{width:"396px"}} src="/src/assets/coding.jpg"/>
+                <div style={{padding: "5px"}}>
+                    <h4 style={{color:textColor}}>Taimoor Ameen </h4>
+                    <p style={{color:textColor}}>Software developer</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    );  
+}
+export default App;
