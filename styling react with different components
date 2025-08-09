@@ -1,0 +1,45 @@
+import style from "./css/userProfile.module.css";
+
+function UserProfile() {
+  return (
+    <div>
+      <div className={style.container}>
+        <div className={style.userCart}>
+          <div>
+            <img
+              src="/src/assets/coding.jpg"
+              className={style.imgStyle}
+              alt="programming"
+            />
+          </div>
+          <div className={style.textWrap}>
+            <h4>Taimoor Ameen</h4>
+            <p>Software Engineer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const App = () =>{
+    return( 
+    <div>
+        <h1 className="heading">This is heading in App.jsx</h1>
+        <div style={{display:"flex", flexWrap: "wrap"}}>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+            <UserProfile/>
+        </div>
+    </div>
+    );  
+}
+export default App;
