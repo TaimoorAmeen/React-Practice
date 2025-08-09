@@ -1,0 +1,51 @@
+/*
+
+    In React, an uncontrolled component is a form element (like <input>, <textarea>, <select>) that manages its own value in the DOM, instead of React controlling it through state.
+
+*/
+
+
+
+
+import { useRef } from "react";
+const App = () =>{
+    const userRef = useRef(null);
+    const passwordRef = useRef(null);
+
+    const handleForm = (event) => {
+        event.preventDefault();
+        const user = document.querySelector("#user").value;
+        const password = document.querySelector("#password").value;
+        console.log(user);
+        console.log(password); 
+    }
+    const handleFormRef = (event) => {
+        event.preventDefault();    
+        const user = userRef.current.value;
+        console.log(user);
+        const pass = passwordRef.current.value;
+        console.log(pass);
+    }
+    return( 
+    <div>
+        <form action="" onSubmit={handleForm}>
+            <input type="text" id="user" placeholder="enter user name"/>
+            <br /><br />
+            <input type="password" id="password" placeholder="enter password"/>
+            <br /><br />
+            <button>Submit</button>
+        </form>
+        <hr />
+        <h1>Uncontrolled Component with useRef</h1>
+        <form action="" onSubmit={handleFormRef}>
+            <input ref={userRef} type="text" id="userRef" placeholder="enter user name"/>
+            <br /><br />
+            <input ref={passwordRef} type="password" id="passwordRef" placeholder="enter password"/>
+            <br /><br />
+            <button>Submit with Ref</button>
+        </form>
+
+    </div>
+    );  
+}
+export default App;
