@@ -1,0 +1,43 @@
+import styled from "styled-components";
+const App = () =>{
+    // const Heading = styled.h1
+    // `
+    //     color:red;
+    //     border: 1px solid black;
+    //     border-radius: 5px;
+    //     margin: 20px;
+    //     padding: 20px;
+    // `;
+
+    const Heading = styled.h1({
+        color:'red',
+        border: '1px solid green',
+        borderRadius: '5px',
+        margin: '20px',
+        padding: '20px'
+    });
+
+    const StyledBtn = styled.button
+    `
+        color: red;
+        width: 130px;
+        height: 40px;
+        margin: 20px;
+
+    `;
+
+    return( 
+    <div>
+        <Heading>Hello Heading1</Heading>
+        <Heading>Hello Heading2</Heading>
+        <Heading>Hello Heading3</Heading>
+        <Heading>Hello Heading4</Heading>
+        <Heading>Hello Heading5</Heading>
+        <StyledBtn>Login</StyledBtn>
+        <StyledBtn>Sign Up</StyledBtn>
+        <StyledBtn>Back</StyledBtn>
+
+    </div>
+    );  
+}
+export default App;
