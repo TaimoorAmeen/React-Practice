@@ -1,0 +1,40 @@
+import { useRef } from "react";
+//this is recommended till react 18
+
+// import React, { forwardRef } from 'react'
+
+// //older version for using forward ref before version 19
+// const UserInput = (props,ref) => {
+//   return (
+//     <div>
+//         <input type="text" ref={ref}/>
+//     </div>
+//   )
+// }
+
+const UserInput = (props) => {
+  return (
+    <div>
+      <input type="text" ref={props.ref}/>
+    </div>
+  )
+}
+
+
+const App = () =>{
+    const inputRef = useRef('');
+    const updateInput = () => {
+        inputRef.current.value = 1000;
+        inputRef.current.focus();
+        inputRef.current.style.color = "red";
+    }
+    return( 
+    <div>
+            <h1>Forward Ref</h1>
+            <UserInput ref={inputRef}/>
+            <br /><br />
+            <button onClick={updateInput}>Update Input Field</button>
+    </div>
+    );  
+}
+export default App;
